@@ -1,0 +1,137 @@
+
+.tabpanel_form_RoleForm [tcheckgroup="capabilities"],
+.tabpanel_form_RoleForm [tcheckgroup="denied"],
+.tabpanel_form_RoleForm [tcheckgroup="group_names"] {
+    width: 100%;
+    max-height: 160px;
+    padding: 0.5rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.tabpanel_form_RoleForm .fb-inline-field-container {
+    display: block !important;
+    float: none !important;
+    width: 100%;
+}
+
+/* Roles */
+div[tcheckgroup="groups"],
+div[tcheckgroup="capabilities"],
+div[tcheckgroup="denied"] {
+    border: 1px solid #ddd;
+    padding: 0.25rem;
+    max-height: 170px;
+    overflow-y: scroll;
+}
+.tabpanel_form_RoleForm.all .row:nth-child(2) [tcheckgroup] > div,
+.tabpanel_form_RoleForm.all .row:nth-child(2) [tcheckgroup] > br {
+    display: none !important;
+}
+.tabpanel_form_RoleForm.all .row:nth-child(2) [tcheckgroup] > div:first-child {
+    display: block !important;
+}
+.tabpanel_form_RoleForm .tformrow.row:nth-child(3) {
+    display: none !important;
+}
+.tabpanel_form_RoleForm.all .tformrow.row:nth-child(3) {
+    display: block !important;
+}
+
+/* Config */
+#form_Config .normal-item,
+#form_Config .admin-item {
+    display: none;
+}
+
+#form_Config.normal-items .normal-item,
+#form_Config.admin-items .admin-item {
+    display: flex;
+}
+
+#form_Config *[data-admin],
+#form_Config *[data-global] {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+#form_Config .edit-admin-vars *[data-admin],
+#form_Config .edit-global-vars *[data-global] {
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+/* Footer sempre em baixo */
+#adianti_right_panel [page-name] > .panel {
+    margin-bottom: 0 !important;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 50px;
+}
+#adianti_right_panel .card-footer:last-child {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+ #form_SystemUsers .form-group:nth-child(2) .col-sm-6:last-child {
+     opacity: 0.6;
+     pointer-events: none;
+     cursor: default;
+ }
+ 
+ /* Esconde coisas */
+.tabpanel_form_SystemUsers .row:nth-child(6),
+.tabpanel_form_SystemUsers .row:nth-child(7),
+.tabpanel_form_SystemUsers .row:nth-child(8),
+.tabpanel_form_SystemUsers .row:nth-child(9) {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* Menu */
+.sidebar-menu .treeview-menu>li>a.current-page {
+    color: #c8eeff;
+}
+
+/* Formulários */
+label {
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+[type="checkbox"]+label.tswitch {
+    transform: scale(0.6);
+    margin: -3px -2rem 0 -1rem;
+}
+
+.modal-backdrop.show.fade {
+    opacity: 0.3 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+[13-Jul-2024 09:50:14 America/Sao_Paulo] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO) in D:\htdocs\mad-base\lib\adianti\database\TConnection.php:116
+Stack trace:
+#0 D:\htdocs\mad-base\lib\adianti\database\TConnection.php(116): PDO->__construct('mysql:host=;por...', '', Object(SensitiveParameterValue), Array)
+#1 D:\htdocs\mad-base\lib\adianti\database\TConnection.php(47): Adianti\Database\TConnection::openArray(Array)
+#2 D:\htdocs\mad-base\lib\adianti\database\TTransaction.php(63): Adianti\Database\TConnection::open('base')
+#3 D:\htdocs\mad-base\app\service\Util.php(12): Adianti\Database\TTransaction::open('base')
+#4 D:\htdocs\mad-base\app\model\Options.php(85): Util::open()
+#5 D:\htdocs\mad-base\app\model\Options.php(95): Options::getValue('actions_set', NULL, 'value', true)
+#6 D:\htdocs\mad-base\app\service\ActionsService.php(10): Options::getAdmValue('actions_set')
+#7 D:\htdocs\mad-base\index.php(5): ActionsService::start()
+#8 {main}
+  thrown in D:\htdocs\mad-base\lib\adianti\database\TConnection.php on line 116

@@ -1,0 +1,31 @@
+
+/* Menu manager */
+ul.module-menu,
+ul.module-menu li {
+    list-style-type: none;
+    list-style: none;
+}
+ul.module-menu li .module-label,
+li.menu-item .item-label {
+    font-size: 16px;
+    cursor: ns-resize;
+}
+.iconpicker-container span {
+    padding-top: 6px;
+}
+.module-menu .delete-item,
+.module-menu .edit-item {
+    margin-left: 4px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms ease-in-out 0s;
+}
+.module-menu .menu-item:hover > .delete-item,
+.module-menu .menu-item:hover > .edit-item {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.menu-footer-actions {
+    margin: 2rem auto 0;
+}
