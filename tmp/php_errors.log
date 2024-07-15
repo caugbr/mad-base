@@ -10,3 +10,12 @@ Stack trace:
 #7 D:\htdocs\mad-base\index.php(5): ActionsService::start()
 #8 {main}
   thrown in D:\htdocs\mad-base\lib\adianti\database\TConnection.php on line 116
+[14-Jul-2024 09:14:47 America/Sao_Paulo] PHP Warning:  Array to string conversion in D:\htdocs\mad-base\lib\adianti\widget\form\TEntry.php on line 389
+[14-Jul-2024 09:14:47 America/Sao_Paulo] PHP Warning:  Array to string conversion in D:\htdocs\mad-base\lib\adianti\widget\form\TEntry.php on line 389
+[14-Jul-2024 09:14:47 America/Sao_Paulo] PHP Warning:  Array to string conversion in D:\htdocs\mad-base\lib\adianti\widget\form\TEntry.php on line 389
+[14-Jul-2024 09:15:35 America/Sao_Paulo] PHP Warning:  Array to string conversion in D:\htdocs\mad-base\lib\adianti\widget\form\TEntry.php on line 389
+[14-Jul-2024 09:15:35 America/Sao_Paulo] PHP Warning:  Array to string conversion in D:\htdocs\mad-base\lib\adianti\widget\form\TEntry.php on line 389
+[14-Jul-2024 09:15:35 America/Sao_Paulo] PHP Warning:  Array to string conversion in D:\htdocs\mad-base\lib\adianti\widget\form\TEntry.php on line 389
+[14-Jul-2024 09:30:54 America/Sao_Paulo] PHP Warning:  Array to string conversion in D:\htdocs\mad-base\lib\adianti\widget\form\TEntry.php on line 389
+[14-Jul-2024 09:30:54 America/Sao_Paulo] PHP Warning:  Array to string conversion in D:\htdocs\mad-base\lib\adianti\widget\form\TEntry.php on line 389
+[14-Jul-2024 09:30:54 America/Sao_Paulo] PHP Warning:  Array to string conversion in D:\htdocs\mad-base\lib\adianti\widget\form\TEntry.php on line 389

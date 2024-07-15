@@ -1,9 +1,9 @@
 <?php
 
 class Util {
-    
+
     public static $database = 'base';
-    
+
     public static function open($db = '') {
         self::close();
         if (empty($db)) {
@@ -11,7 +11,7 @@ class Util {
         }
         TTransaction::open($db);
     }
-    
+
     public static function close() {
         try {
             $dbname = self::getDbName();
@@ -41,7 +41,7 @@ class Util {
         $string = preg_replace('/_+/', '_', $string);
         return trim($string, '_');
     }
-    
+
     public static function readDir($path, $pattern = '') {
         $path = rtrim($path, "/");
         $files = array_diff(scandir($path), ['..', '.']);

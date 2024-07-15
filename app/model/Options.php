@@ -76,7 +76,9 @@ class Options extends TRecord
      /**
      * Method get - retorna o valor da option pelo nome
      * @param $name - nome da option
+     * @param $default - valor retornado caso a options não exista
      * @param $prop - nome da propriedade desejada
+     * @param $adm - Option administrativa?
      * @returns option value
      */
     public static function getValue($name, $default = NULL, $prop = 'value', $adm = false)
@@ -99,6 +101,7 @@ class Options extends TRecord
      * Method set - define o valor da option pelo nome
      * @param $name - nome da option
      * @param $value - novo valor da option
+     * @param $adm - Option administrativa?
      * @returns void
      */
     public static function setValue($name, $value, $adm = false)
@@ -206,6 +209,6 @@ class Options extends TRecord
         return false;
     }
 
-                                                
+                                                    
 }
 

@@ -60,7 +60,7 @@ class RoleForm extends TPage
         $items = $capabilities->getItems();
         $items = ['all' => 'Tudo'] + $items;
         $capabilities->addItems($items);
-        $capabilities->setValue('all');
+        $capabilities->setValue(['all']);
 
         $items = $group_names->getItems();
         $items = ['all' => 'Todos'] + $items;
@@ -180,6 +180,7 @@ class RoleForm extends TPage
                 $object->group_names = $garr;
 
                 $caps = explode(",", trim($object->capabilities));
+                Util::open('permission');
                 if (count($caps) == 1 && $caps[0] == 'all') {
                     $object->capabilities = $caps;
                 } else {
