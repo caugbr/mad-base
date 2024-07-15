@@ -23,6 +23,9 @@ Tentamos marcar o item atual (e abrir o submenu relativo) com base na URL carreg
 #### Tema
 Adicionamos uma identificação do tema carregado como atributo do BODY (data-theme: builder | lte2 | lte3 | bsb).
 
+### Side panel
+Adicionamos uma rotina para fechar o painel lateral com Esc ou clicando fora.
+
 #### adiantiHelper
 Combinamos várias funcionalidades para interagir com o sistema Adianti a partir do javascript.
 - **Interação com o usuário**
