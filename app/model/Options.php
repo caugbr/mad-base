@@ -56,7 +56,7 @@ class Options extends TRecord
     }
  
      /**
-     * Method get - retorna um array de options
+     * Method get - remove options que casarem com a string enviada
      * @param $partial - string a ser buscada no nome das options
      * @returns options array
      */
@@ -126,7 +126,8 @@ class Options extends TRecord
      /**
      * Method addValue - add a new global option
      * @param $name - nome da option
-     * @param $values - valor da option
+     * @param $value - valor da option
+     * @param $adm - Option administrativa?
      * @returns void
      */
     public static function addValue($name, $value, $adm = false)
@@ -151,7 +152,8 @@ class Options extends TRecord
      /**
      * Method setOrAddValue - set an existent option or add a new global option
      * @param $name - nome da option
-     * @param $values - valor da option
+     * @param $value - valor da option
+     * @param $adm - Option administrativa?
      * @returns void
      */
     public static function setOrAddValue($name, $value, $adm = false)
@@ -169,6 +171,7 @@ class Options extends TRecord
      /**
      * Method remove - remove option by name
      * @param $name - nome da option
+     * @param $adm - Option administrativa?
      * @returns void
      */
     public static function removeValue($name, $adm = false)
@@ -196,6 +199,11 @@ class Options extends TRecord
         return ('__unset__' !== $val);
     }
 
+     /**
+     * Method restDelete - remove option by id
+     * @param $param - ajax params
+     * @returns void
+     */
     public static function restDelete($param) {
         if (!empty($param['id'])) {
             Util::open();
@@ -209,6 +217,6 @@ class Options extends TRecord
         return false;
     }
 
-                                                    
+                                                        
 }
 

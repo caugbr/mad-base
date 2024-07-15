@@ -1,13 +1,6 @@
 
 window.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
-        
-        // Edição de role - ação da opção Todos no dropdown capabilities
-        const roleOptAll = event => {
-            const displayOthers = event.target.checked ? 'add' : 'remove';
-            event.target.closest('.tab-pane').classList[displayOthers]('all');
-        };
-        rootEvent('input[name="capabilities[]"][value="all"]', 'input', roleOptAll);
 
         // Config - mostra / esconde parametros por tipo
         rootEvent('input[name="normal-items"],input[name="admin-items"]', 'click', event => {
@@ -37,6 +30,13 @@ window.addEventListener('DOMContentLoaded', function() {
             const option_id = event.target.closest('.delete-option').getAttribute('data-id');
             adiantiHelper.confirm('Remover option', 'Deseja realmente excluir?').then(ok => { if (ok) { deleteOption(option_id); } });
         });
+        
+        // Edição de role - ação da opção Todos no dropdown capabilities
+        const roleOptAll = event => {
+            const displayOthers = event.target.checked ? 'add' : 'remove';
+            event.target.closest('.tab-pane').classList[displayOthers]('all');
+        };
+        rootEvent('input[name="capabilities[]"][value="all"]', 'input', roleOptAll);
 
         // Edição de role - ação da opção Todos no dropdown group_names
         const roleOptAllGroups = event => {
@@ -49,7 +49,7 @@ window.addEventListener('DOMContentLoaded', function() {
         // ações ao abrir o painel lateral
         adiantiHelper.action.add('openSidePanel', () => {
             setTimeout(() => {
-                const caps = $single('.tabpanel_form_RolesForm [name="capabilities[]"]');
+                const caps = $single('.tabpanel_form_RoleForm [name="capabilities[]"]');
                 if (caps) {
                     roleOptAll({target: caps});
                 }

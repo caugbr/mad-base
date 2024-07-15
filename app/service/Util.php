@@ -58,7 +58,7 @@ class Util {
         return $arr;
     }
 
-    // retorna todos os nomes de arquivos em model, control e service, sem o '.php'
+    // retorna todos os nomes de arquivos em model, control e service (opcionalmente), sem o '.php'
     public static function allClasses($from = ['model', 'control', 'service']) {
         $models = in_array('model', $from) ? self::readDir("app/model", ".php") : [];
         $controls = in_array('control', $from) ? self::readDir("app/control", ".php") : [];
