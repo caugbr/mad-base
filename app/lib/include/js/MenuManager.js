@@ -141,12 +141,39 @@ function removeMenuItem(event) {
 }
 
 function editMenuItem(event) {
-    const label = event.target.closest('.menu-item').querySelector('div');
-    adiantiHelper.prompt("Editar rótulo", label.innerHTML.trim()).then(res => {
-        if (res) {
-            label.innerHTML = res;
+    const itm = event.target.closest('.menu-item');
+    const label = itm.querySelector('div');
+    const act = itm.getAttribute('data-action');
+    const module = itm.getAttribute('data-module');
+    const item = itm.getAttribute('data-item');
+    
+    const form = tag('form', { 'class': 'edit-item-form', 'action': '#' });
+    const row1 = tag('div', { 'class': 'row', 'style': 'margin: 0.5rem auto;' });
+    row1.appendChild(tag('div', { 'class': 'col-sm-4' }, tag('label', { 'for': 'item_name' }, 'Rótulo')));
+    row1.appendChild(tag('div', { 'class': 'col-sm-8' }, tag('input', { 'id': 'item_name', 'value': label.innerHTML.trim(), 'style': 'width: 100%;' })));
+    form.appendChild(row1);
+    const row2 = tag('div', { 'class': 'row', 'style': 'margin: 0.5rem auto;' });
+    row2.appendChild(tag('div', { 'class': 'col-sm-4' }, tag('label', { 'for': 'item_action' }, 'Ação')));
+    row2.appendChild(tag('div', { 'class': 'col-sm-8' }, tag('input', { 'id': 'item_action', 'value': act, 'style': 'width: 100%;' })));
+    form.appendChild(row2);
+    
+    const pop = new Popup('Editar item', form);
+    pop.footer = true;
+    const btn = tag('button', { class: 'save-item' }, 'Salvar');
+    btn.setAttribute('data-module', module);
+    btn.setAttribute('data-item', item);
+    btn.addEventListener('click', event => {
+        const mod = event.target.getAttribute('data-module');
+        const itm = event.target.getAttribute('data-item');
+        const elem = $single(`.menu-item[data-module="${mod}"][data-item="${itm}"]`);
+        if (elem) {
+            $single('.item-label,.module-label', elem).innerHTML = $single('.popup-popup #item_name').value;
+            elem.setAttribute('data-action', $single('#item_action').value);
         }
+        pop.close();
     });
+    pop.addFooterButton(btn);
+    pop.open();
 }
 
 function addMenuItem(lbl, act) {
@@ -160,14 +187,16 @@ function addMenuItem(lbl, act) {
         { class: 'menu-item', 'data-module': module, 'data-item': item, 'data-action': action },
         `<a href="javascript://" class="edit-icon" data-module="${module}" data-item="${item}">[+]</a>`
     );
-    if (item < 0) {
-        nli.innerHTML = nli.innerHTML + ` <div class="module-label" style="display: inline-block;">${label}</div>`;
+    const buttons = '<a href="#" class="edit-item"><span class="fa fa-edit" style="color: lightblue;"></span></a> ' +
+                    '<a href="#" class="delete-item"><span class="fa fa-minus" style="color: red;"></span></a>';
+    // if (item < 0) {
+        nli.innerHTML = nli.innerHTML + ` <div class="module-label" style="display: inline-block;">${label}</div> ${buttons}`;
         if (!action) {
         nli.innerHTML = nli.innerHTML + ` <ul class="module-submenu"><li class="add-item"><a href="#"><span class="fa fa-plus" style="color: red;"></span> Novo item</a></li></ul>`;
         }
-    } else {
-        nli.innerHTML = nli.innerHTML + ` <div class="item-label" style="display: inline-block;">${label}</div>`;
-    }
+    // } else {
+    //     nli.innerHTML = nli.innerHTML + ` <div class="item-label" style="display: inline-block;">${label}</div> ${buttons}`;
+    // }
     li.replaceWith(nli);
 }
 

@@ -133,8 +133,8 @@ class MenuManager extends TPage
 
         parent::add($container);
         
-        TScript::create("$('.module-menu').sortable({ connectWith: '.module-menu', items: 'li:not(.add-item)' });");
-        TScript::create("$('.module-submenu').sortable({ connectWith: '.module-submenu', items: 'li:not(.add-item)' });");
+        TScript::create("$('.module-menu').sortable({ connectWith: '.module-menu', items: 'li:not(.add-item,.new-item)' });");
+        TScript::create("$('.module-submenu').sortable({ connectWith: '.module-submenu', items: 'li:not(.add-item,.new-item)' });");
         
         // editar icones
         $popup = new TElement('div');

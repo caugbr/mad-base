@@ -547,9 +547,18 @@ window.Builder = ( function() {
         $('div[page-name="'+pageName+'"] div .tpagenavigation').html($(pageContent).find('div .tpagenavigation').html());
     }
 
-    const toggleDetailRow = function(controller, method, key)
+    const toggleDetailRow = function(controller, method, key, datagridId)
     {
-        let a = $('#row_'+key).find('a[href*="'+method+'"]');
+        let a;
+        if(typeof datagridId != 'undefined')
+        {
+            a = $('#'+datagridId+' > tbody > #row_'+key).find('a[href*="'+method+'"]');
+        }
+        else
+        {
+            a = $('#row_'+key).find('a[href*="'+method+'"]');
+        }
+        
         let href = a.attr('href');
         if(!href.match(/b_hide=1/))
         {
