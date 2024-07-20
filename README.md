@@ -29,14 +29,14 @@ Adicionamos uma rotina para fechar o painel lateral com Esc ou clicando fora.
 #### adiantiHelper
 Combinamos várias funcionalidades para interagir com o sistema Adianti a partir do javascript.
 
-- **Interação com o usuário**
+- **Interação com o usuário**\
   As caixas de diálogo do sistema, montadas como Promises: `alert`, `errorAlert`, `prompt`, `confirm` e `toast`.
 
-- **Carregar conteúdo**
+- **Carregar conteúdo**\
   Funções para buscar conteúdos no servidor e exibir sem recarregar a página: `loadPage`, `loadSidePanel`, `loadHtml`.
 
-- **Rest API**
+- **Rest API**\
   Fornece um meio simples de acessar a API do sistema, com base nos nomes da classe e do método, como funcionam as URLs do sistema. Você deve definir sua `restKey` em `adiantiHelper.js`.
 
-- **actions**
+- **actions**\
   Similar às actions criadas no nível do PHP. Com os métodos aninhados em `actions` podemos definir ganchos no nosso código Javascript, facilitando o trabalho de interagir em pontos específicos do código. Há o método actions.graft que serve para enxertar ganchos em funções já existentes. Usando o `graft`, já criamos os hooks 'loadPage', 'openSidePanel' e 'closeSidePanel'.
